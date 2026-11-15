@@ -103,6 +103,11 @@ main .wrap{padding-block:16px 40px;display:flex;flex-direction:column;gap:12px}
 .fim .btn.ghost{background:transparent;color:#fff;border-color:#fff}
 .lock{border:1.5px dashed var(--line);padding:16px;text-align:center;color:var(--muted);font-size:13px}
 .lock b{display:block;color:var(--ink);font-size:14px;margin-bottom:4px}
+.pesos{background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column}
+.pesos label{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px 14px;border-top:1px solid var(--line);font-size:14px}
+.pesos label:first-child{border-top:0;background:var(--field)}
+.pesos input{font:600 18px/1 var(--body);font-variant-numeric:tabular-nums;color:var(--ink);background:var(--field);border:1.5px solid var(--line);border-radius:6px;padding:10px;width:110px;text-align:right}
+.pesos label:first-child input{background:var(--surface)}
 .passo{background:var(--surface);border:1px solid var(--line);padding:14px;display:flex;flex-direction:column;gap:8px}
 .passo h3{margin:0;font:700 12px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
 .passo h3:before{content:"";width:16px;height:6px;border-radius:3px;background:var(--ink)}
@@ -134,10 +139,14 @@ main .wrap{padding-block:16px 40px;display:flex;flex-direction:column;gap:12px}
 
 <script>
 // Dados do aluno: o gerador troca este bloco a cada consultoria.
-const DADOS = {"id":"gabriel-c445e9","demo":false,"whatsapp":"5565996856769","aluno":"Gabriel","ciclo":"Ciclo 1 · 4 semanas","treinos":[{"letra":"A","titulo":"Superiores: ombros (conjugados)","musculos":["ombros","costas","peitoral","trapezio","triceps"],"exercicios":[["Desenvolvimento com halteres sentado",[3,3,3,3],"8 a 10","1–2","→ A2","1-0-3-0","Desenvolvimento na máquina","","A1"],["Puxada frontal aberta",[3,3,3,4],"10 a 12","1–2","1'30","1-0-3-0","Puxada aberta na máquina articulada","","A2"],["Supino inclinado com halteres",[3,4,4,4],"10 a 12","1–2","→ B2","1-0-3-0","Supino inclinado na máquina","","B1"],["Encolhimento com halteres",[3,4,4,5],"12 a 15","1–2","1'30","1-0-3-0","Encolhimento com barra","","B2"],["Elevação lateral com halteres",[3,4,4,5],"12 a 15","1–2","→ C2","1-0-3-0","Elevação lateral na polia","","C1"],["Tríceps na corda",[3,4,4,5],"12","1–2","1'","1-0-3-0","Tríceps barra reta na polia","","C2"],["Crucifixo invertido",[3,3,3,4],"15","1–2","→ D2","1-0-3-0","Voador inverso na máquina","","D1"],["Pullover na polia",[3,3,3,4],"12 a 15","0–1","1'","1-0-3-0","Pullover com halter","","D2"]],"circuito":null},{"letra":"B","titulo":"Inferiores: quadríceps + circuito + abdômen","musculos":["quadriceps","posteriores","gluteos","panturrilha","abdomen"],"exercicios":[["Leg press 45° (amplitude controlada)",[3,3,3,3],"10 a 12","1–2","→ A2","1-0-3-0","Agachamento goblet","","A1"],["Mesa flexora",[3,3,3,3],"12","1–2","1'30","1-0-3-0","Cadeira flexora","","A2"],["Cadeira extensora (pausa de 2 s no alto)",[3,3,3,3],"12 a 15","1–2","→ B2","1-2-3-0","Agachamento goblet com caixa","","B1"],["Elevação pélvica",[3,3,3,3],"10 a 12","1–2","1'30","1-0-3-0","Glúteo na máquina","","B2"],["Panturrilha em pé",[3,3,3,3],"15","0–1","45\"","1-1-3-0","Panturrilha no leg press","","C"]],"circuito":{"voltas":"4 voltas","descanso":"1' entre as voltas","itens":[["Swing com halter","15"],["Farmer walk (caminhada com halteres)","30 m"],["Mountain climber","20"],["Abdominal infra","15"]]}},{"letra":"C","titulo":"Superiores: costas e trapézio (conjugados)","musculos":["costas","trapezio","peitoral","biceps","ombros"],"exercicios":[["Barra fixa ou puxada supinada",[3,4,4,5],"8 a 10","1–2","→ A2","1-0-3-0","Barra fixa no graviton","","A1"],["Supino reto com halteres",[3,4,4,4],"8 a 10","1–2","1'30","1-0-3-0","Supino reto na máquina","","A2"],["Remada curvada pegada aberta",[3,3,3,3],"10 a 12","1–2","→ B2","1-0-3-0","Remada aberta na máquina","","B1"],["Face pull",[3,3,3,4],"15","1–2","1'","1-0-3-0","Crucifixo invertido","","B2"],["Remada baixa aberta",[3,3,3,3],"12","1–2","→ C2","1-0-3-0","Remada aberta no cabo, sentado","","C1"],["Rosca direta com barra (drop set na última série)",[3,3,3,4],"10","1–2","1'","1-0-3-0","Rosca direta na polia","","C2"],["Encolhimento com barra",[3,4,4,5],"12","1–2","→ D2","1-0-3-0","Encolhimento com halteres","","D1"],["Elevação em Y no banco inclinado",[3,4,4,4],"12","0–1","1'","1-0-3-0","Elevação em Y na polia","","D2"]],"circuito":null},{"letra":"D","titulo":"Inferiores: posterior e glúteo + circuito + abdômen","musculos":["posteriores","gluteos","quadriceps","panturrilha","abdomen"],"exercicios":[["Stiff com halteres",[3,3,3,3],"8 a 10","1–2","→ A2","1-0-3-0","Stiff com barra","","A1"],["Afundo reverso com halteres",[3,3,3,3],"10 cada perna","1–2","1'30","1-0-3-0","Afundo no Smith","","A2"],["Cadeira flexora",[3,3,3,3],"12","1–2","→ B2","1-0-3-0","Mesa flexora","","B1"],["Cadeira abdutora",[3,3,3,3],"15","1–2","1'","1-0-3-0","Abdução com elástico","","B2"],["Panturrilha sentado",[3,3,3,3],"15","0–1","45\"","1-1-3-0","Panturrilha em pé","","C"]],"circuito":{"voltas":"4 voltas","descanso":"1' entre as voltas","itens":[["Burpee sem salto","10"],["Remada com halter","12"],["Agachamento sumô com halter","15"],["Prancha","30 s"]]}},{"letra":"E","titulo":"Superiores curto: ombros e braços + bike","musculos":["ombros","biceps","triceps"],"exercicios":[["Elevação lateral com halteres",[3,4,4,5],"12 a 15","1–2","→ A2","1-0-3-0","Elevação lateral na polia","","A1"],["Rosca alternada (drop set na última série)",[3,4,4,5],"10 a 12","1–2","1'","1-0-3-0","Rosca no banco inclinado","","A2"],["Tríceps francês com halter",[3,4,4,5],"10 a 12","1–2","→ B2","1-0-3-0","Tríceps francês na polia","","B1"],["Rosca inversa",[3,4,4,4],"12","0–1","1'","1-0-3-0","Rosca punho","","B2"]],"cardio":{"titulo":"Bike","linhas":[["Estímulo","horizontal, 15 a 20' moderado","5–6"]]},"circuito":null}]};
+const DADOS = {"id":"gabriel-c445e9","demo":false,"whatsapp":"5565996856769","aluno":"Gabriel","ciclo":"Ciclo 1 · 4 semanas","treinos":[{"letra":"A","titulo":"Superiores: ombros (conjugados)","musculos":["ombros","costas","peitoral","trapezio","triceps"],"exercicios":[["Desenvolvimento com halteres sentado",[3,3,3,3],"8 a 10","1–2","→ A2","1-0-3-0","Desenvolvimento na máquina","","A1"],["Puxada frontal aberta",[3,3,3,4],"10 a 12","1–2","1'30","1-0-3-0","Puxada aberta na máquina articulada","","A2"],["Supino inclinado com halteres",[3,4,4,4],"10 a 12","1–2","→ B2","1-0-3-0","Supino inclinado na máquina","","B1"],["Encolhimento com halteres",[3,4,4,5],"12 a 15","1–2","1'30","1-0-3-0","Encolhimento com barra","","B2"],["Elevação lateral com halteres",[3,4,4,5],"12 a 15","1–2","→ C2","1-0-3-0","Elevação lateral na polia","","C1"],["Tríceps na corda",[3,4,4,5],"12","1–2","1'","1-0-3-0","Tríceps barra reta na polia","","C2"],["Crucifixo invertido",[3,3,3,4],"15","1–2","→ D2","1-0-3-0","Voador inverso na máquina","","D1"],["Pullover na polia",[3,3,3,4],"12 a 15","1–2","1'","1-0-3-0","Pullover com halter","","D2"],["Supino declinado com halteres",[3,4,4,4],"10 a 12","1–2","→ E2","1-0-3-0","Supino declinado na máquina ou paralelas","","E1"],["Crucifixo com halteres no banco reto",[3,4,4,4],"12 a 15","0–1","1'","1-0-3-0","Peck deck descendo em no mínimo 4 s, ou crossover na polia (de cima para baixo)","","E2"]],"circuito":null},{"letra":"B","titulo":"Inferiores: quadríceps + circuito + abdômen","musculos":["quadriceps","posteriores","gluteos","panturrilha","abdomen"],"exercicios":[["Leg press 45° (amplitude controlada)",[3,3,3,3],"10 a 12","1–2","→ A2","1-0-3-0","Agachamento goblet","","A1"],["Mesa flexora",[3,3,3,3],"12","1–2","1'30","1-0-3-0","Cadeira flexora","","A2"],["Cadeira extensora (pausa de 2 s no alto)",[3,3,3,3],"12 a 15","1–2","→ B2","1-2-3-0","Agachamento goblet com caixa","","B1"],["Elevação pélvica",[3,3,3,3],"10 a 12","1–2","1'30","1-0-3-0","Glúteo na máquina","","B2"],["Panturrilha em pé",[3,3,3,3],"15","0–1","45\"","1-1-3-0","Panturrilha no leg press","","C"]],"circuito":{"voltas":"4 voltas","descanso":"1' entre as voltas","itens":[["Swing com halter","15"],["Farmer walk (caminhada com halteres)","30 m"],["Mountain climber","20"],["Abdominal infra","15"]]}},{"letra":"C","titulo":"Superiores: costas e trapézio (conjugados)","musculos":["costas","trapezio","peitoral","biceps","ombros"],"exercicios":[["Barra fixa ou puxada supinada",[3,4,4,5],"8 a 10","1–2","→ A2","1-0-3-0","Barra fixa no graviton","","A1"],["Supino reto com halteres",[3,4,4,4],"8 a 10","1–2","1'30","1-0-3-0","Supino reto na máquina","","A2"],["Remada curvada pegada aberta",[3,3,3,3],"10 a 12","1–2","→ B2","1-0-3-0","Remada aberta na máquina","","B1"],["Face pull",[3,3,3,4],"15","1–2","1'","1-0-3-0","Crucifixo invertido","","B2"],["Remada baixa aberta",[3,3,3,3],"12","1–2","→ C2","1-0-3-0","Remada aberta no cabo, sentado","","C1"],["Rosca direta com barra (drop set na última série)",[3,3,3,4],"10","1–2","1'","1-0-3-0","Rosca direta na polia","","C2"],["Encolhimento com barra",[3,4,4,5],"12","1–2","→ D2","1-0-3-0","Encolhimento com halteres","","D1"],["Elevação em Y no banco inclinado",[3,4,4,4],"12","0–1","1'","1-0-3-0","Elevação em Y na polia","","D2"]],"circuito":null},{"letra":"D","titulo":"Inferiores: posterior e glúteo + circuito + abdômen","musculos":["posteriores","gluteos","quadriceps","panturrilha","abdomen"],"exercicios":[["Stiff com halteres",[3,3,3,3],"8 a 10","1–2","→ A2","1-0-3-0","Stiff com barra","","A1"],["Afundo reverso com halteres",[3,3,3,3],"10 cada perna","1–2","1'30","1-0-3-0","Afundo no Smith","","A2"],["Cadeira flexora",[3,3,3,3],"12","1–2","→ B2","1-0-3-0","Mesa flexora","","B1"],["Cadeira abdutora",[3,3,3,3],"15","1–2","1'","1-0-3-0","Abdução com elástico","","B2"],["Panturrilha sentado",[3,3,3,3],"15","0–1","45\"","1-1-3-0","Panturrilha em pé","","C"]],"circuito":{"voltas":"4 voltas","descanso":"1' entre as voltas","itens":[["Burpee sem salto","10"],["Remada com halter","12"],["Agachamento sumô com halter","15"],["Prancha","30 s"]]}},{"letra":"E","titulo":"Superiores curto: ombros e braços + bike","musculos":["ombros","biceps","triceps"],"exercicios":[["Elevação lateral com halteres",[3,4,4,5],"12 a 15","1–2","→ A2","1-0-3-0","Elevação lateral na polia","","A1"],["Rosca alternada (drop set na última série)",[3,4,4,5],"10 a 12","1–2","1'","1-0-3-0","Rosca no banco inclinado","","A2"],["Tríceps francês com halter",[3,4,4,5],"10 a 12","1–2","→ B2","1-0-3-0","Tríceps francês na polia","","B1"],["Rosca inversa",[3,4,4,4],"12","0–1","1'","1-0-3-0","Rosca punho","","B2"]],"cardio":{"titulo":"Bike","linhas":[["Estímulo","horizontal, 15 a 20' moderado","5–6"]]},"circuito":null}]};
 
 const KEY = 'ficha-' + DADOS.id;
-const NT = DADOS.treinos.length, ABA_EVO = NT, ABA_APP = NT + 1;
+const NT = DADOS.treinos.length, ABA_EVO = NT, ABA_PESO = NT + 1, ABA_APP = NT + 2;
+let peso = {};
+try { peso = JSON.parse(localStorage.getItem(KEY + '-peso') || '{}') || {}; } catch (e) { peso = {}; }
+const salvarPeso = () => { try { localStorage.setItem(KEY + '-peso', JSON.stringify(peso)); } catch (e) {} };
+const PESO_LBL = ['Início', 'Semana 1', 'Semana 2', 'Semana 3', 'Semana 4'];
 let reg = {};
 try { reg = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { reg = {}; }
 let ui = { semana: 0, aba: 0 };
@@ -229,6 +238,7 @@ function topo() {
   document.getElementById('abas').innerHTML = DADOS.treinos.map((t, i) =>
     `<button class="tab tl" role="tab" aria-label="Treino ${t.letra}: ${esc(t.titulo)}" id="aba${i}" aria-selected="${ui.aba === i}" data-a="${i}"><b>${t.letra}</b><span>${esc(t.titulo)}</span></button>`).join('') +
     `<button class="tab tx" role="tab" id="aba${ABA_EVO}" aria-selected="${ui.aba === ABA_EVO}" data-a="${ABA_EVO}"><b>↗</b><span>Evolução</span></button>` +
+    `<button class="tab tx" role="tab" id="aba${ABA_PESO}" aria-selected="${ui.aba === ABA_PESO}" data-a="${ABA_PESO}"><b>kg</b><span>Peso</span></button>` +
     `<button class="tab tx" role="tab" id="aba${ABA_APP}" aria-selected="${ui.aba === ABA_APP}" data-a="${ABA_APP}"><b>＋</b><span>Instalar</span></button>`;
 }
 
@@ -314,6 +324,36 @@ function fimDeCiclo(st) {
   </section>`;
 }
 
+function graficoPeso() {
+  const pts = PESO_LBL.map((_, i) => ({ i, v: num(peso['p' + i]) })).filter(p => p.v !== null);
+  if (pts.length < 2) return `<div class="vazio">${pts.length ? 'Anote mais uma semana para ver a linha.' : 'Comece anotando seu peso inicial.'}</div>`;
+  const W = 300, H = 92, px = i => 26 + i * ((W - 52) / 4);
+  const vs = pts.map(p => p.v), lo = Math.min(...vs), hi = Math.max(...vs), rg = hi - lo || 1;
+  const py = v => 66 - ((v - lo) / rg) * 40;
+  const linha = pts.map((p, n) => `${n ? 'L' : 'M'}${px(p.i).toFixed(1)} ${py(p.v).toFixed(1)}`).join(' ');
+  return `<svg viewBox="0 0 ${W} ${H}" aria-label="Evolução do peso">
+    <line x1="10" y1="76" x2="${W - 10}" y2="76" stroke="var(--line)" stroke-width="1"/>
+    <path d="${linha}" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+    ${pts.map((p, n) => `<circle cx="${px(p.i)}" cy="${py(p.v)}" r="${n === pts.length - 1 ? 5 : 3.5}" fill="${n === pts.length - 1 ? 'var(--ink)' : 'var(--surface)'}" stroke="var(--ink)" stroke-width="2"/>
+      <text x="${px(p.i)}" y="${py(p.v) - 9}" text-anchor="middle" font-size="11" font-weight="700" fill="var(--ink)" font-family="Inter,sans-serif">${fmt(p.v)}</text>`).join('')}
+    ${PESO_LBL.map((l, i) => `<text x="${px(i)}" y="${H - 1}" text-anchor="middle" font-size="9.5" font-weight="600" fill="var(--muted)" font-family="Inter,sans-serif">${i ? 'S' + i : 'Início'}</text>`).join('')}
+  </svg>`;
+}
+function deltaPeso() {
+  const ini = num(peso.p0); let ult = null;
+  for (let i = 4; i > 0; i--) if (num(peso['p' + i]) !== null) { ult = num(peso['p' + i]); break; }
+  if (ini === null || ult === null) return '';
+  const d = ult - ini;
+  return `<span class="delta">${d > 0 ? '+' : d < 0 ? '−' : ''}${fmt(Math.abs(d))} kg desde o início</span>`;
+}
+function telaPeso() {
+  return `<div class="title"><h2><mark>Seu peso</mark></h2></div>
+    <p style="margin:0">Pese-se uma vez por semana, no mesmo dia e horário, de preferência em jejum e depois de ir ao banheiro.</p>
+    <section class="pesos">${PESO_LBL.map((l, i) => `<label for="peso${i}"><span>${i ? l : '<b>Peso inicial</b>'}</span><input id="peso${i}" inputmode="decimal" placeholder="— kg" value="${esc(peso['p' + i] || '')}" data-p="${i}"></label>`).join('')}</section>
+    <div class="chart"><div class="top"><b>Evolução do peso (kg)</b><span id="pesoDelta">${deltaPeso()}</span></div><div id="pesoGraf">${graficoPeso()}</div></div>
+    <p class="dica">O peso sobe e desce de um dia para o outro com água, sal e intestino. Olhe a tendência das 4 semanas. <b>Se o peso cai devagar e as cargas sobem, você está perdendo gordura e mantendo o músculo.</b></p>` + rodape();
+}
+
 function instalar() {
   return `<div class="title"><h2><mark>Sua ficha como app</mark></h2></div>
     <p style="margin:0">Coloque a ficha na tela inicial do celular. Ela vira um ícone e abre direto, sem baixar nada.</p>
@@ -337,7 +377,7 @@ const rodape = () => `<div class="foot"><span class="brand"><span class="pul"></
 function render() {
   topo();
   const el = document.getElementById('conteudo');
-  el.innerHTML = ui.aba < NT ? treino() : ui.aba === ABA_EVO ? evolucao() : instalar();
+  el.innerHTML = ui.aba < NT ? treino() : ui.aba === ABA_EVO ? evolucao() : ui.aba === ABA_PESO ? telaPeso() : instalar();
   if (ui.aba === ABA_EVO && document.getElementById('cardImg')) desenharCard();
 }
 
@@ -389,15 +429,17 @@ document.addEventListener('click', ev => {
   else if (b.dataset.a) { ui.aba = +b.dataset.a; salvar(); render(); window.scrollTo({ top: 0 }); }
   else if (b.id === 'compartilhar') compartilhar();
   else if (b.id === 'copiar') {
-    const txt = DADOS.aluno + ' · evolução\n' + DADOS.treinos.map((t, a) => 'Treino ' + t.letra + '\n' + t.exercicios.map((x, e) => x[0] + ': ' + [0, 1, 2, 3].map(s => { const r = reg[k(a, e, s)] || {}; return r.c ? r.c + 'kg×' + (r.r || '?') : '–'; }).join(' | ')).join('\n')).join('\n\n');
+    const txt = DADOS.aluno + ' · evolução\n' + DADOS.treinos.map((t, a) => 'Treino ' + t.letra + '\n' + t.exercicios.map((x, e) => x[0] + ': ' + [0, 1, 2, 3].map(s => { const r = reg[k(a, e, s)] || {}; return r.c ? r.c + 'kg×' + (r.r || '?') : '–'; }).join(' | ')).join('\n')).join('\n\n') + (Object.values(peso).some(v => v) ? '\n\nPeso: ' + PESO_LBL.map((l, i) => l + ' ' + (peso['p' + i] || '–')).join(' | ') : '');
     (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(() => toast('Evolução copiada'), () => toast('Não foi possível copiar'));
   }
   else if (b.id === 'limpar') document.getElementById('confirma').hidden = false;
   else if (b.id === 'naoLimpar') document.getElementById('confirma').hidden = true;
-  else if (b.id === 'simLimpar') { reg = {}; salvar(); render(); toast('Anotações apagadas'); }
+  else if (b.id === 'simLimpar') { reg = {}; peso = {}; salvar(); salvarPeso(); render(); toast('Anotações apagadas'); }
 });
 document.addEventListener('input', ev => {
-  const i = ev.target; if (!i.dataset.f) return;
+  const i = ev.target;
+  if (i.dataset.p) { peso['p' + i.dataset.p] = i.value.trim(); salvarPeso(); document.getElementById('pesoGraf').innerHTML = graficoPeso(); document.getElementById('pesoDelta').innerHTML = deltaPeso(); return; }
+  if (!i.dataset.f) return;
   const ti = ui.aba, e = +i.dataset.e, id = k(ti, e, ui.semana);
   reg[id] = reg[id] || {}; reg[id][i.dataset.f] = i.value.trim(); salvar();
   document.getElementById('ex' + e).classList.toggle('done', !!reg[id].c);

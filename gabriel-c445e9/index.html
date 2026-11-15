@@ -139,7 +139,7 @@ main .wrap{padding-block:16px 40px;display:flex;flex-direction:column;gap:12px}
 
 <script>
 // Dados do aluno: o gerador troca este bloco a cada consultoria.
-const DADOS = {"id":"gabriel-c445e9","demo":false,"whatsapp":"5565996856769","aluno":"Gabriel","ciclo":"Ciclo 1 · 4 semanas","treinos":[{"letra":"A","titulo":"Superiores: ombros (conjugados)","musculos":["ombros","costas","peitoral","trapezio","triceps"],"exercicios":[["Desenvolvimento com halteres sentado",[3,3,3,3],"8 a 10","1–2","→ A2","1-0-3-0","Desenvolvimento na máquina","","A1"],["Puxada frontal aberta",[3,3,3,4],"10 a 12","1–2","1'30","1-0-3-0","Puxada aberta na máquina articulada","","A2"],["Supino inclinado com halteres",[3,4,4,4],"10 a 12","1–2","→ B2","1-0-3-0","Supino inclinado na máquina","","B1"],["Encolhimento com halteres",[3,4,4,5],"12 a 15","1–2","1'30","1-0-3-0","Encolhimento com barra","","B2"],["Elevação lateral com halteres",[3,4,4,5],"12 a 15","1–2","→ C2","1-0-3-0","Elevação lateral na polia","","C1"],["Tríceps na corda",[3,4,4,5],"12","1–2","1'","1-0-3-0","Tríceps barra reta na polia","","C2"],["Crucifixo invertido",[3,3,3,4],"15","1–2","→ D2","1-0-3-0","Voador inverso na máquina","","D1"],["Pullover na polia",[3,3,3,4],"12 a 15","1–2","1'","1-0-3-0","Pullover com halter","","D2"],["Supino declinado com halteres",[3,4,4,4],"10 a 12","1–2","→ E2","1-0-3-0","Supino declinado na máquina ou paralelas","","E1"],["Crucifixo com halteres no banco reto",[3,4,4,4],"12 a 15","0–1","1'","1-0-3-0","Peck deck descendo em no mínimo 4 s, ou crossover na polia (de cima para baixo)","","E2"]],"circuito":null},{"letra":"B","titulo":"Inferiores: quadríceps + circuito + abdômen","musculos":["quadriceps","posteriores","gluteos","panturrilha","abdomen"],"exercicios":[["Leg press 45° (amplitude controlada)",[3,3,3,3],"10 a 12","1–2","→ A2","1-0-3-0","Agachamento goblet","","A1"],["Mesa flexora",[3,3,3,3],"12","1–2","1'30","1-0-3-0","Cadeira flexora","","A2"],["Cadeira extensora (pausa de 2 s no alto)",[3,3,3,3],"12 a 15","1–2","→ B2","1-2-3-0","Agachamento goblet com caixa","","B1"],["Elevação pélvica",[3,3,3,3],"10 a 12","1–2","1'30","1-0-3-0","Glúteo na máquina","","B2"],["Panturrilha em pé",[3,3,3,3],"15","0–1","45\"","1-1-3-0","Panturrilha no leg press","","C"]],"circuito":{"voltas":"4 voltas","descanso":"1' entre as voltas","itens":[["Swing com halter","15"],["Farmer walk (caminhada com halteres)","30 m"],["Mountain climber","20"],["Abdominal infra","15"]]}},{"letra":"C","titulo":"Superiores: costas e trapézio (conjugados)","musculos":["costas","trapezio","peitoral","biceps","ombros"],"exercicios":[["Barra fixa ou puxada supinada",[3,4,4,5],"8 a 10","1–2","→ A2","1-0-3-0","Barra fixa no graviton","","A1"],["Supino reto com halteres",[3,4,4,4],"8 a 10","1–2","1'30","1-0-3-0","Supino reto na máquina","","A2"],["Remada curvada pegada aberta",[3,3,3,3],"10 a 12","1–2","→ B2","1-0-3-0","Remada aberta na máquina","","B1"],["Face pull",[3,3,3,4],"15","1–2","1'","1-0-3-0","Crucifixo invertido","","B2"],["Remada baixa aberta",[3,3,3,3],"12","1–2","→ C2","1-0-3-0","Remada aberta no cabo, sentado","","C1"],["Rosca direta com barra (drop set na última série)",[3,3,3,4],"10","1–2","1'","1-0-3-0","Rosca direta na polia","","C2"],["Encolhimento com barra",[3,4,4,5],"12","1–2","→ D2","1-0-3-0","Encolhimento com halteres","","D1"],["Elevação em Y no banco inclinado",[3,4,4,4],"12","0–1","1'","1-0-3-0","Elevação em Y na polia","","D2"]],"circuito":null},{"letra":"D","titulo":"Inferiores: posterior e glúteo + circuito + abdômen","musculos":["posteriores","gluteos","quadriceps","panturrilha","abdomen"],"exercicios":[["Stiff com halteres",[3,3,3,3],"8 a 10","1–2","→ A2","1-0-3-0","Stiff com barra","","A1"],["Afundo reverso com halteres",[3,3,3,3],"10 cada perna","1–2","1'30","1-0-3-0","Afundo no Smith","","A2"],["Cadeira flexora",[3,3,3,3],"12","1–2","→ B2","1-0-3-0","Mesa flexora","","B1"],["Cadeira abdutora",[3,3,3,3],"15","1–2","1'","1-0-3-0","Abdução com elástico","","B2"],["Panturrilha sentado",[3,3,3,3],"15","0–1","45\"","1-1-3-0","Panturrilha em pé","","C"]],"circuito":{"voltas":"4 voltas","descanso":"1' entre as voltas","itens":[["Burpee sem salto","10"],["Remada com halter","12"],["Agachamento sumô com halter","15"],["Prancha","30 s"]]}},{"letra":"E","titulo":"Superiores curto: ombros e braços + bike","musculos":["ombros","biceps","triceps"],"exercicios":[["Elevação lateral com halteres",[3,4,4,5],"12 a 15","1–2","→ A2","1-0-3-0","Elevação lateral na polia","","A1"],["Rosca alternada (drop set na última série)",[3,4,4,5],"10 a 12","1–2","1'","1-0-3-0","Rosca no banco inclinado","","A2"],["Tríceps francês com halter",[3,4,4,5],"10 a 12","1–2","→ B2","1-0-3-0","Tríceps francês na polia","","B1"],["Rosca inversa",[3,4,4,4],"12","0–1","1'","1-0-3-0","Rosca punho","","B2"]],"cardio":{"titulo":"Bike","linhas":[["Estímulo","horizontal, 15 a 20' moderado","5–6"]]},"circuito":null}]};
+const DADOS = {"id":"gabriel-c445e9","demo":false,"sync":"","whatsapp":"5565996856769","aluno":"Gabriel","ciclo":"Ciclo 1 · 4 semanas","treinos":[{"letra":"A","titulo":"Superiores: ombros (conjugados)","musculos":["ombros","costas","peitoral","trapezio","triceps"],"exercicios":[["Desenvolvimento com halteres sentado",[3,3,3,3],"8 a 10","1–2","→ A2","1-0-3-0","Desenvolvimento na máquina","","A1"],["Puxada frontal aberta",[3,3,3,4],"10 a 12","1–2","1'30","1-0-3-0","Puxada aberta na máquina articulada","","A2"],["Supino inclinado com halteres",[3,4,4,4],"10 a 12","1–2","→ B2","1-0-3-0","Supino inclinado na máquina","","B1"],["Encolhimento com halteres",[3,4,4,5],"12 a 15","1–2","1'30","1-0-3-0","Encolhimento com barra","","B2"],["Elevação lateral com halteres",[3,4,4,5],"12 a 15","1–2","→ C2","1-0-3-0","Elevação lateral na polia","","C1"],["Tríceps na corda",[3,4,4,5],"12","1–2","1'","1-0-3-0","Tríceps barra reta na polia","","C2"],["Crucifixo invertido",[3,3,3,4],"15","1–2","→ D2","1-0-3-0","Voador inverso na máquina","","D1"],["Pullover na polia",[3,3,3,4],"12 a 15","1–2","1'","1-0-3-0","Pullover com halter","","D2"],["Supino declinado com halteres",[3,4,4,4],"10 a 12","1–2","→ E2","1-0-3-0","Supino declinado na máquina ou paralelas","","E1"],["Crucifixo com halteres no banco reto",[3,4,4,4],"12 a 15","0–1","1'","1-0-3-0","Peck deck descendo em no mínimo 4 s, ou crossover na polia (de cima para baixo)","","E2"]],"circuito":null},{"letra":"B","titulo":"Inferiores: quadríceps + circuito + abdômen","musculos":["quadriceps","posteriores","gluteos","panturrilha","abdomen"],"exercicios":[["Leg press 45° (amplitude controlada)",[3,3,3,3],"10 a 12","1–2","→ A2","1-0-3-0","Agachamento goblet","","A1"],["Mesa flexora",[3,3,3,3],"12","1–2","1'30","1-0-3-0","Cadeira flexora","","A2"],["Cadeira extensora (pausa de 2 s no alto)",[3,3,3,3],"12 a 15","1–2","→ B2","1-2-3-0","Agachamento goblet com caixa","","B1"],["Elevação pélvica",[3,3,3,3],"10 a 12","1–2","1'30","1-0-3-0","Glúteo na máquina","","B2"],["Panturrilha em pé",[3,3,3,3],"15","0–1","45\"","1-1-3-0","Panturrilha no leg press","","C"]],"circuito":{"voltas":"4 voltas","descanso":"1' entre as voltas","itens":[["Swing com halter","15"],["Farmer walk (caminhada com halteres)","30 m"],["Mountain climber","20"],["Abdominal infra","15"]]}},{"letra":"C","titulo":"Superiores: costas e trapézio (conjugados)","musculos":["costas","trapezio","peitoral","biceps","ombros"],"exercicios":[["Barra fixa ou puxada supinada",[3,4,4,5],"8 a 10","1–2","→ A2","1-0-3-0","Barra fixa no graviton","","A1"],["Supino reto com halteres",[3,4,4,4],"8 a 10","1–2","1'30","1-0-3-0","Supino reto na máquina","","A2"],["Remada curvada pegada aberta",[3,3,3,3],"10 a 12","1–2","→ B2","1-0-3-0","Remada aberta na máquina","","B1"],["Face pull",[3,3,3,4],"15","1–2","1'","1-0-3-0","Crucifixo invertido","","B2"],["Remada baixa aberta",[3,3,3,3],"12","1–2","→ C2","1-0-3-0","Remada aberta no cabo, sentado","","C1"],["Rosca direta com barra (drop set na última série)",[3,3,3,4],"10","1–2","1'","1-0-3-0","Rosca direta na polia","","C2"],["Encolhimento com barra",[3,4,4,5],"12","1–2","→ D2","1-0-3-0","Encolhimento com halteres","","D1"],["Elevação em Y no banco inclinado",[3,4,4,4],"12","0–1","1'","1-0-3-0","Elevação em Y na polia","","D2"]],"circuito":null},{"letra":"D","titulo":"Inferiores: posterior e glúteo + circuito + abdômen","musculos":["posteriores","gluteos","quadriceps","panturrilha","abdomen"],"exercicios":[["Stiff com halteres",[3,3,3,3],"8 a 10","1–2","→ A2","1-0-3-0","Stiff com barra","","A1"],["Afundo reverso com halteres",[3,3,3,3],"10 cada perna","1–2","1'30","1-0-3-0","Afundo no Smith","","A2"],["Cadeira flexora",[3,3,3,3],"12","1–2","→ B2","1-0-3-0","Mesa flexora","","B1"],["Cadeira abdutora",[3,3,3,3],"15","1–2","1'","1-0-3-0","Abdução com elástico","","B2"],["Panturrilha sentado",[3,3,3,3],"15","0–1","45\"","1-1-3-0","Panturrilha em pé","","C"]],"circuito":{"voltas":"4 voltas","descanso":"1' entre as voltas","itens":[["Burpee sem salto","10"],["Remada com halter","12"],["Agachamento sumô com halter","15"],["Prancha","30 s"]]}},{"letra":"E","titulo":"Superiores curto: ombros e braços + bike","musculos":["ombros","biceps","triceps"],"exercicios":[["Elevação lateral com halteres",[3,4,4,5],"12 a 15","1–2","→ A2","1-0-3-0","Elevação lateral na polia","","A1"],["Rosca alternada (drop set na última série)",[3,4,4,5],"10 a 12","1–2","1'","1-0-3-0","Rosca no banco inclinado","","A2"],["Tríceps francês com halter",[3,4,4,5],"10 a 12","1–2","→ B2","1-0-3-0","Tríceps francês na polia","","B1"],["Rosca inversa",[3,4,4,4],"12","0–1","1'","1-0-3-0","Rosca punho","","B2"]],"cardio":{"titulo":"Bike","linhas":[["Estímulo","horizontal, 15 a 20' moderado","5–6"]]},"circuito":null}]};
 
 const KEY = 'ficha-' + DADOS.id;
 const NT = DADOS.treinos.length, ABA_EVO = NT, ABA_PESO = NT + 1, ABA_APP = NT + 2;
@@ -155,6 +155,24 @@ if (ui.aba > ABA_APP) ui.aba = 0;
 const salvar = () => { try { localStorage.setItem(KEY, JSON.stringify(reg)); localStorage.setItem(KEY + '-ui', JSON.stringify(ui)); } catch (e) {} };
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const k = (t, e, s) => `${t}-${e}-${s}`;
+
+// ---------- cópia de segurança na planilha da consultoria ----------
+const SYNC = DADOS.sync || '';
+const pend = v => { try { v === undefined ? 0 : v ? localStorage.setItem(KEY + '-pend', '1') : localStorage.removeItem(KEY + '-pend'); return localStorage.getItem(KEY + '-pend') === '1'; } catch (e) { return false; } };
+function enviarAgora(limpar) {
+  if (!SYNC || DADOS.demo) return;
+  const cargas = [];
+  DADOS.treinos.forEach((t, ti) => t.exercicios.forEach((x, e) => [0, 1, 2, 3].forEach(s => {
+    const r = reg[k(ti, e, s)]; if (r && (r.c || r.r)) cargas.push({ letra: t.letra, cod: x[8] || '', nome: x[0], s, c: r.c || '', r: r.r || '' });
+  })));
+  pend(true);
+  fetch(SYNC, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify({ id: DADOS.id, aluno: DADOS.aluno, cargas, peso, reg, limpar: !!limpar }) })
+    .then(() => { pend(false); try { localStorage.setItem(KEY + '-env', '1'); } catch (e) {} }, () => {});
+}
+let tEnvio;
+const enviar = () => { if (!SYNC) return; pend(true); clearTimeout(tEnvio); tEnvio = setTimeout(() => enviarAgora(), 2500); };
+window.addEventListener('pagehide', () => { if (pend(undefined)) enviarAgora(); });
 const num = v => { const n = parseFloat(String(v || '').replace(',', '.')); return isFinite(n) ? n : null; };
 const fmt = n => (Math.round(n * 10) / 10).toString().replace('.', ',');
 
@@ -301,6 +319,7 @@ function evolucao() {
   const st = stats();
   let h = `<div class="title"><h2><mark>Sua evolução</mark></h2></div>
     <div class="resumo"><div><b>${st.anot}</b><span>Cargas anotadas</span></div><div><b>${st.rec}</b><span>Recordes pessoais</span></div><div><b>${st.melhor ? '+' + Math.round(st.melhor.p) + '%' : '–'}</b><span>Maior evolução</span></div></div>`;
+  h += botaoZap() + `<p class="note" style="margin:-4px 0 0">No domingo, envie suas cargas e seu peso da semana.</p>`;
   h += st.fim ? fimDeCiclo(st) : `<div class="lock"><b>Seu card de fim de ciclo</b>Anote as cargas da semana 4 para liberar seu card de conquista e o próximo passo.</div>`;
   h += `<p class="note" style="text-align:left;margin:4px 0 0">Carga (kg) de cada exercício, semana a semana.</p>`;
   DADOS.treinos.forEach((t, ti) => { h += `<div class="grp">Treino ${t.letra}</div>` + t.exercicios.map((x, e) => grafico(ti, e, x)).join(''); });
@@ -346,12 +365,32 @@ function deltaPeso() {
   const d = ult - ini;
   return `<span class="delta">${d > 0 ? '+' : d < 0 ? '−' : ''}${fmt(Math.abs(d))} kg desde o início</span>`;
 }
+function ultimaSemana() {
+  for (let s = 3; s >= 0; s--) if (DADOS.treinos.some((t, ti) => t.exercicios.some((_, e) => (reg[k(ti, e, s)] || {}).c))) return s;
+  return -1;
+}
+function linkSemana() {
+  const s = ultimaSemana();
+  let txt = `Olá, Igor! Aqui é o ${DADOS.aluno}.`;
+  if (s >= 0) {
+    txt += ` Minha semana ${s + 1}:\n`;
+    DADOS.treinos.forEach((t, ti) => {
+      const l = t.exercicios.map((x, e) => { const r = reg[k(ti, e, s)] || {}; return r.c ? `${x[8] ? x[8] + ' ' : ''}${x[0]}: ${r.c} kg × ${r.r || '?'}` : null; }).filter(Boolean);
+      if (l.length) txt += `\nTreino ${t.letra}\n` + l.join('\n') + '\n';
+    });
+  }
+  const pv = PESO_LBL.map((_, i) => peso['p' + i]).filter(v => v);
+  if (pv.length) txt += `\nPeso: ${PESO_LBL.map((l, i) => peso['p' + i] ? l.replace('Semana ', 'S') + ' ' + peso['p' + i] : null).filter(Boolean).join(' | ')} kg`;
+  return `https://wa.me/${DADOS.whatsapp}?text=${encodeURIComponent(txt)}`;
+}
+const botaoZap = () => DADOS.whatsapp ? `<a class="btn" id="zap" href="${linkSemana()}" target="_blank" rel="noopener">Enviar minha semana pelo WhatsApp</a>` : '';
+
 function telaPeso() {
   return `<div class="title"><h2><mark>Seu peso</mark></h2></div>
     <p style="margin:0">Pese-se uma vez por semana, no mesmo dia e horário, de preferência em jejum e depois de ir ao banheiro.</p>
     <section class="pesos">${PESO_LBL.map((l, i) => `<label for="peso${i}"><span>${i ? l : '<b>Peso inicial</b>'}</span><input id="peso${i}" inputmode="decimal" placeholder="— kg" value="${esc(peso['p' + i] || '')}" data-p="${i}"></label>`).join('')}</section>
     <div class="chart"><div class="top"><b>Evolução do peso (kg)</b><span id="pesoDelta">${deltaPeso()}</span></div><div id="pesoGraf">${graficoPeso()}</div></div>
-    <p class="dica">O peso sobe e desce de um dia para o outro com água, sal e intestino. Olhe a tendência das 4 semanas. <b>Se o peso cai devagar e as cargas sobem, você está perdendo gordura e mantendo o músculo.</b></p>` + rodape();
+    <p class="dica">O peso sobe e desce de um dia para o outro com água, sal e intestino. Olhe a tendência das 4 semanas. <b>Se o peso cai devagar e as cargas sobem, você está perdendo gordura e mantendo o músculo.</b></p>` + botaoZap() + rodape();
 }
 
 function instalar() {
@@ -369,7 +408,7 @@ function instalar() {
       <li>Confirme em <b>Adicionar</b>.</li></ol></section>
     <section class="passo"><h3>Abriu pelo WhatsApp?</h3>
       <p class="dica" style="margin:0">O navegador de dentro do WhatsApp não deixa instalar. Toque nos três pontinhos (ou no ícone de bússola) e escolha <b>Abrir no navegador</b>. Depois siga os passos acima.</p></section>
-    <p class="note">Suas anotações ficam salvas neste celular. Use sempre o mesmo navegador para não perder o histórico.</p>` + rodape();
+    <p class="note">${SYNC ? 'Suas anotações ficam salvas neste celular e numa cópia de segurança da consultoria Igor Merino. Se trocar de celular, é só abrir o link de novo.' : 'Suas anotações ficam salvas neste celular. Use sempre o mesmo navegador para não perder o histórico.'}</p>` + rodape();
 }
 
 const rodape = () => `<div class="foot"><span class="brand"><span class="pul"></span>Igor Merino</span><span>Músculo é seguro de vida.</span></div>`;
@@ -434,14 +473,14 @@ document.addEventListener('click', ev => {
   }
   else if (b.id === 'limpar') document.getElementById('confirma').hidden = false;
   else if (b.id === 'naoLimpar') document.getElementById('confirma').hidden = true;
-  else if (b.id === 'simLimpar') { reg = {}; peso = {}; salvar(); salvarPeso(); render(); toast('Anotações apagadas'); }
+  else if (b.id === 'simLimpar') { reg = {}; peso = {}; salvar(); salvarPeso(); enviarAgora(true); render(); toast('Anotações apagadas'); }
 });
 document.addEventListener('input', ev => {
   const i = ev.target;
-  if (i.dataset.p) { peso['p' + i.dataset.p] = i.value.trim(); salvarPeso(); document.getElementById('pesoGraf').innerHTML = graficoPeso(); document.getElementById('pesoDelta').innerHTML = deltaPeso(); return; }
+  if (i.dataset.p) { peso['p' + i.dataset.p] = i.value.trim(); salvarPeso(); enviar(); document.getElementById('pesoGraf').innerHTML = graficoPeso(); document.getElementById('pesoDelta').innerHTML = deltaPeso(); const z = document.getElementById('zap'); if (z) z.href = linkSemana(); return; }
   if (!i.dataset.f) return;
   const ti = ui.aba, e = +i.dataset.e, id = k(ti, e, ui.semana);
-  reg[id] = reg[id] || {}; reg[id][i.dataset.f] = i.value.trim(); salvar();
+  reg[id] = reg[id] || {}; reg[id][i.dataset.f] = i.value.trim(); salvar(); enviar();
   document.getElementById('ex' + e).classList.toggle('done', !!reg[id].c);
   const t = DADOS.treinos[ti]; const f = t.exercicios.filter((_, x) => (reg[k(ti, x, ui.semana)] || {}).c).length;
   document.getElementById('prog').textContent = `${f}/${t.exercicios.length} anotados · semana ${ui.semana + 1}`;
@@ -460,6 +499,18 @@ if (DADOS.demo && !Object.keys(reg).length) {
   ui.semana = 3; ui.aba = ABA_EVO;
 }
 render();
+// envia o que ficou pendente; se o celular está sem anotações, tenta recuperar a cópia de segurança
+if (SYNC && !DADOS.demo) {
+  let jaEnviou = false; try { jaEnviou = localStorage.getItem(KEY + '-env') === '1'; } catch (e) {}
+  const temDados = Object.keys(reg).length || Object.values(peso).some(v => v);
+  if (pend(undefined) || (!jaEnviou && temDados)) enviarAgora();
+  else if (!Object.keys(reg).length && !Object.values(peso).some(v => v)) {
+    fetch(SYNC + '?id=' + encodeURIComponent(DADOS.id)).then(r => r.json()).then(d => {
+      if (Object.keys(reg).length || !d || !d.reg || !Object.keys(d.reg).length && !Object.values(d.peso || {}).some(v => v)) return;
+      reg = d.reg; peso = d.peso || {}; salvar(); salvarPeso(); render(); toast('Suas anotações foram recuperadas');
+    }).catch(() => {});
+  }
+}
 </script>
 
 </body></html>

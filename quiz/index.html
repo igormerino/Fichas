@@ -6,7 +6,7 @@
 <meta name="description" content="Responda em 1 minuto e veja se a consultoria de treino online é para você.">
 <meta property="og:title" content="Consultoria de treino online · Igor Merino">
 <meta property="og:description" content="Responda em 1 minuto e veja se a consultoria é para você.">
-<meta property="og:image" content="https://igormerino.github.io/Fichas/icone-512.png">
+<meta property="og:image" content="../icone-512.png">
 <meta name="theme-color" content="#0E0E0E">
 <link rel="icon" href="../icone-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,6 +26,7 @@ h1{font-size:40px}h2{font-size:29px}
 h1 span,h2 span{background:var(--band);color:#fff;padding:1px 9px 3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 p{margin:0}.lead{font-size:17px}.muted{color:var(--muted);font-size:14px}
 .opts{display:flex;flex-direction:column;gap:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chips span{border:1.5px solid var(--ink);padding:8px 12px;font:700 12px/1 Inter;letter-spacing:.12em;text-transform:uppercase}
 .op{font:600 16px/1.3 Inter;text-align:left;background:var(--surface);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:16px;cursor:pointer;display:flex;gap:12px;align-items:center}
 .op:before{content:"";width:18px;height:18px;border-radius:50%;border:2px solid var(--ink);flex:none}
 .op[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
@@ -85,11 +86,11 @@ function tela() {
 }
 function podeSeguir() { const q = P[i]; return q.campos ? true : !!R[q.id]; }
 function inicio() {
-  app.innerHTML = `<h1><span>Consultoria de treino online</span></h1>
-    <p class="lead">Responda em 1 minuto e veja se a consultoria de treino online é para você.</p>
-    <div class="lst"><div>Treino de 4 semanas montado para a sua rotina e a sua academia</div><div>PDF completo e ficha digital para anotar as cargas e ver sua evolução</div><div>Pagamento único. Sem mensalidade.</div></div>
-    <p class="muted">O Igor monta cada treino pessoalmente.</p>
-    <div class="nav"><button class="btn" id="comecar">Começar</button></div>`;
+  app.innerHTML = `<p class="muted">Consultoria de treino online · Igor Merino</p>
+    <h1><span>Um corpo mais forte e mais bonito começa com direção.</span></h1>
+    <p class="lead">Chega de treinar no escuro. Com um treino feito para você, cada ida à academia te deixa mais perto do que você quer.</p>
+    <div class="chips"><span>Força</span><span>Corpo firme</span><span>Beleza</span><span>Clareza</span></div>
+    <div class="nav"><button class="btn" id="comecar">Quero começar</button></div>`;
 }
 function perfil() {
   const ok = R.formato && R.formato.startsWith('Perfeito') && R.experiencia !== 'Ainda não treino';

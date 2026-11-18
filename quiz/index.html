@@ -109,11 +109,11 @@ function fim() {
   app.innerHTML = ideal
     ? `<h1><span>${nome}, você tem o perfil.</span></h1>
       <p class="lead">Pelas suas respostas, a consultoria combina com você.</p>
-      <div class="dk"><p><b style="color:#fff">Último passo:</b> envie seu cadastro pelo WhatsApp. A mensagem já vai pronta, é só tocar em enviar. O Igor confere as vagas e te responde.</p></div>
+      <div class="dk"><p><b style="color:#fff">Último passo:</b> envie seu cadastro pelo WhatsApp. A mensagem já vai pronta, é só tocar em enviar. Eu confiro as vagas e te respondo.</p></div>
       <a class="btn" href="${mensagem()}" target="_blank" rel="noopener">Enviar meu cadastro no WhatsApp</a>
       <button class="btn ghost" id="refazer">Refazer o quiz</button>`
     : `<h1><span>Obrigado, ${nome}.</span></h1>
-      <p class="lead">A consultoria funciona melhor para quem já tem alguma base de treino. Mesmo assim, envie seu cadastro: o Igor avalia o seu caso e te diz o melhor caminho.</p>
+      <p class="lead">A consultoria funciona melhor para quem já tem alguma base de treino. Mesmo assim, envie seu cadastro: eu avalio o seu caso e te digo o melhor caminho.</p>
       <a class="btn" href="${mensagem()}" target="_blank" rel="noopener">Enviar meu cadastro no WhatsApp</a>
       <button class="btn ghost" id="refazer">Refazer o quiz</button>`;
 }

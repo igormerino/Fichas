@@ -64,7 +64,7 @@ const P = [
   { id: 'dias', t: 'Quantos dias por semana você consegue treinar?', o: ['2 dias', '3 dias', '4 dias', '5 dias ou mais'] },
   { id: 'tempo', t: 'Quanto tempo você tem por treino?', o: ['Até 45 minutos', 'De 45 minutos a 1 hora', 'Mais de 1 hora'] },
   { id: 'lesao', t: 'Tem alguma dor, lesão ou restrição?', o: ['Não', 'Sim'], extra: 'Qual? (ex.: dor no joelho, cirurgia no ombro)' },
-  { id: 'formato', t: 'Como funciona a consultoria', txt: 'Você recebe um treino de 4 semanas montado para você, em PDF e numa ficha digital no celular, para seguir com autonomia. Não inclui acompanhamento por mensagem.', o: ['Perfeito, quero treinar com autonomia', 'Prefiro alguém me acompanhando de perto'] },
+  { id: 'formato', t: 'Como funciona a consultoria', txt: 'Você recebe um treino de 4 semanas montado para você, em PDF e numa ficha digital no celular para anotar suas cargas. E eu acompanho você de perto: trocamos feedbacks por áudio no WhatsApp.', o: ['Perfeito, quero começar', 'Quero entender melhor antes'] },
   { id: 'contato', t: 'Para finalizar, seus dados', campos: [['nome', 'Nome', 'text', 'Seu nome'], ['idade', 'Idade', 'number', 'Ex.: 38'], ['cidade', 'Cidade', 'text', 'Ex.: Cuiabá']] },
 ];
 const R = {}; let i = -1;
@@ -93,7 +93,7 @@ function inicio() {
     <div class="nav"><button class="btn" id="comecar">Quero começar</button></div>`;
 }
 function perfil() {
-  const ok = R.formato && R.formato.startsWith('Perfeito') && R.experiencia !== 'Ainda não treino';
+  const ok = R.experiencia !== 'Ainda não treino';
   return ok ? 'ideal' : 'avaliar';
 }
 function mensagem() {
@@ -112,7 +112,7 @@ function fim() {
       <a class="btn" href="${mensagem()}" target="_blank" rel="noopener">Enviar meu cadastro no WhatsApp</a>
       <button class="btn ghost" id="refazer">Refazer o quiz</button>`
     : `<h1><span>Obrigado, ${nome}.</span></h1>
-      <p class="lead">${R.experiencia === 'Ainda não treino' ? 'A consultoria funciona melhor para quem já tem alguma base de treino.' : 'A consultoria é para quem quer treinar com autonomia, sem acompanhamento por mensagem.'} Mesmo assim, envie seu cadastro: o Igor avalia o seu caso e te diz o melhor caminho.</p>
+      <p class="lead">A consultoria funciona melhor para quem já tem alguma base de treino. Mesmo assim, envie seu cadastro: o Igor avalia o seu caso e te diz o melhor caminho.</p>
       <a class="btn" href="${mensagem()}" target="_blank" rel="noopener">Enviar meu cadastro no WhatsApp</a>
       <button class="btn ghost" id="refazer">Refazer o quiz</button>`;
 }

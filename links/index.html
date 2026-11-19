@@ -14,36 +14,42 @@
 <style>
 :root{--bg:#F4F2EE;--surface:#fff;--ink:#111110;--muted:#6F6B65;--line:#DEDAD3;--band:#0E0E0E}
 *{box-sizing:border-box}html,body{margin:0}
-body{background:var(--bg);color:var(--ink);font:16px/1.45 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
-header{background:var(--band);color:#fff;padding:18px 20px 16px}
-header .k{font:600 11px/1 Inter;letter-spacing:.2em;text-transform:uppercase;color:#9a968f}
-main{flex:1;width:100%;max-width:520px;margin:0 auto;padding:26px 20px 30px;display:flex;flex-direction:column;gap:16px}
-h1{font-family:Archivo,'Arial Narrow',sans-serif;font-stretch:80%;font-weight:900;text-transform:uppercase;margin:0 0 0 -4px;line-height:1.42;font-size:40px}
-h1 span{background:var(--band);color:#fff;padding:1px 9px 3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
-.lead{font-size:17px;margin:0}
-.links{display:flex;flex-direction:column;gap:10px;margin-top:6px}
-.lk{display:flex;align-items:center;gap:14px;background:var(--surface);color:var(--ink);text-decoration:none;border:1.5px solid var(--line);border-left:5px solid var(--ink);border-radius:10px;padding:16px}
-.lk:hover,.lk:focus-visible{border-color:var(--ink);outline:none}
-.lk .n{font:900 22px/1 Archivo,'Arial Narrow',sans-serif;font-stretch:80%;width:22px;flex:none}
+body{background:var(--bg);color:var(--ink);font:16px/1.45 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;align-items:center}
+main{flex:1;width:100%;max-width:480px;padding:44px 20px 30px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px}
+.av{width:104px;height:104px;border-radius:50%;background:var(--band) url(../icone-512.png) center/cover;border:3px solid var(--ink);box-shadow:0 0 0 4px var(--bg),0 0 0 5px var(--line)}
+h1{font:900 26px/1.1 Archivo,'Arial Narrow',sans-serif;font-stretch:85%;text-transform:uppercase;letter-spacing:.04em;margin:12px 0 0}
+.at{color:var(--muted);font-size:14px;margin:0}
+.bio{font-size:15px;margin:4px 0 0}
+.slogan{display:inline-block;background:var(--band);color:#fff;font:800 12px/1 Inter;letter-spacing:.14em;text-transform:uppercase;padding:7px 10px;margin-top:6px}
+.links{width:100%;display:flex;flex-direction:column;gap:12px;margin-top:22px}
+.lk{display:block;background:var(--surface);color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:999px;padding:15px 22px;transition:transform .12s}
+.lk:hover,.lk:focus-visible{transform:scale(1.02);outline:none}
 .lk b{display:block;font-size:16px;font-weight:700}
-.lk small{display:block;color:var(--muted);font-size:13px;margin-top:3px}
-.lk .ar{margin-left:auto;font-weight:700;flex:none}
-.lk.dk{background:var(--band);color:#fff;border-color:var(--band)}.lk.dk small{color:#bdb9b2}
-footer{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);max-width:520px;width:100%;margin:0 auto}
-.brand{display:flex;align-items:center;gap:8px;font:800 11px/1 Archivo;font-stretch:90%;letter-spacing:.22em;color:var(--ink)}
+.lk small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.lk.dk{background:var(--band);color:#fff}.lk.dk small{color:#bdb9b2}
+.soc{display:flex;gap:14px;margin-top:22px}
+.soc a{width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;color:var(--ink)}
+.soc svg{width:20px;height:20px}
+footer{display:flex;justify-content:center;align-items:center;gap:8px;padding:18px 20px 22px;font:800 11px/1 Archivo;font-stretch:90%;letter-spacing:.22em}
 .pul{width:26px;height:9px;border-radius:5px;background:var(--band)}
 </style>
 </head><body>
-<header><div class="k">Igor Merino · Personal trainer</div></header>
 <main>
-  <h1><span>Músculo é seguro de vida.</span></h1>
-  <p class="lead">Personal trainer em Cuiabá. Escolha por onde quer começar.</p>
+  <div class="av" role="img" aria-label="Igor Merino"></div>
+  <h1>Igor Merino</h1>
+  <p class="at">@igormerinotreinador</p>
+  <p class="bio">Personal trainer em Cuiabá · Mestrando em Educação Física</p>
+  <span class="slogan">Músculo é seguro de vida.</span>
   <nav class="links">
-    <a class="lk dk" href="../quiz/"><span class="n">1</span><span><b>Consultoria online</b><small>Treino montado para você, onde estiver</small></span><span class="ar">→</span></a>
-    <a class="lk" href="https://musculoblindado.com.br/protocolo" target="_blank" rel="noopener"><span class="n">2</span><span><b>Músculo Blindado</b><small>Emagreça com caneta sem perder músculo</small></span><span class="ar">→</span></a>
-    <a class="lk" href="../quiz-personal/"><span class="n">3</span><span><b>Personal presencial em Cuiabá</b><small>Veja se tenho horário para você</small></span><span class="ar">→</span></a>
-    <a class="lk" href="https://www.instagram.com/nutripaulahunger/" target="_blank" rel="noopener"><span class="n">4</span><span><b>Nutri Paula Hunger</b><small>@nutripaulahunger</small></span><span class="ar">→</span></a>
+    <a class="lk dk" href="../quiz/"><b>Consultoria online</b><small>Treino montado para você, onde estiver</small></a>
+    <a class="lk" href="https://musculoblindado.com.br/protocolo" target="_blank" rel="noopener"><b>Músculo Blindado</b><small>Emagreça com caneta sem perder músculo</small></a>
+    <a class="lk" href="../quiz-personal/"><b>Personal presencial em Cuiabá</b><small>Veja se tenho horário para você</small></a>
+    <a class="lk" href="https://www.instagram.com/nutripaulahunger/" target="_blank" rel="noopener"><b>Nutri Paula Hunger</b><small>@nutripaulahunger</small></a>
   </nav>
+  <div class="soc">
+    <a href="https://www.instagram.com/igormerinotreinador/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+    <a href="https://wa.me/5565996856769" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 20l1.3-4A8 8 0 1 1 8.2 19z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2z" fill="currentColor" stroke="none"/></svg></a>
+  </div>
 </main>
-<footer><span class="brand"><span class="pul"></span>IGOR MERINO</span><span>@igormerinotreinador</span></footer>
+<footer><span class="pul"></span>IGOR MERINO</footer>
 </body></html>

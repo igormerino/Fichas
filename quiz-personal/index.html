@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Personal em Cuiabá · Igor Merino</title>
+<meta name="description" content="Responda em 1 minuto e veja se o Igor tem horário para você.">
+<meta property="og:title" content="Personal trainer em Cuiabá · Igor Merino">
+<meta property="og:description" content="Responda em 1 minuto e veja se tenho horário para você.">
+<meta property="og:image" content="../icone-512.png">
+<meta name="theme-color" content="#0E0E0E">
+<link rel="icon" href="../icone-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,700..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F4F2EE;--surface:#fff;--ink:#111110;--muted:#6F6B65;--line:#DEDAD3;--band:#0E0E0E;--field:#F1EFEA}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.45 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+[hidden]{display:none!important}
+header{background:var(--band);color:#fff;padding:18px 20px 16px}
+header .k{font:600 11px/1 Inter;letter-spacing:.2em;text-transform:uppercase;color:#9a968f}
+header .bar{height:5px;background:#2a2a2a;margin-top:14px;border-radius:3px;overflow:hidden}
+header .bar i{display:block;height:100%;background:#fff;width:0;transition:width .3s}
+main{flex:1;width:100%;max-width:520px;margin:0 auto;padding:26px 20px 30px;display:flex;flex-direction:column;gap:16px}
+h1,h2{font-family:Archivo,'Arial Narrow',sans-serif;font-stretch:80%;font-weight:900;text-transform:uppercase;margin:0 0 0 -4px;line-height:1.42}
+h1{font-size:40px}h2{font-size:29px}
+h1 span,h2 span{background:var(--band);color:#fff;padding:1px 9px 3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+p{margin:0}.lead{font-size:17px}.muted{color:var(--muted);font-size:14px}
+.opts{display:flex;flex-direction:column;gap:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chips span{border:1.5px solid var(--ink);padding:8px 12px;font:700 12px/1 Inter;letter-spacing:.12em;text-transform:uppercase}
+.op{font:600 16px/1.3 Inter;text-align:left;background:var(--surface);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:16px;cursor:pointer;display:flex;gap:12px;align-items:center}
+.op:before{content:"";width:18px;height:18px;border-radius:50%;border:2px solid var(--ink);flex:none}
+.op[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.op[aria-pressed="true"]:before{background:var(--ink);box-shadow:inset 0 0 0 3px var(--surface)}
+.op small{display:block;font-weight:400;color:var(--muted);font-size:13px;margin-top:3px}
+label.f{display:flex;flex-direction:column;gap:6px;font:600 12px/1 Inter;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+input,textarea{font:500 17px/1.3 Inter;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:10px;padding:14px;width:100%}
+textarea{min-height:80px;resize:vertical}
+input:focus,textarea:focus,.op:focus-visible,.btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.btn{border:0;background:var(--ink);color:var(--bg);font:700 14px/1 Inter;letter-spacing:.08em;text-transform:uppercase;padding:18px;border-radius:10px;cursor:pointer;text-align:center;text-decoration:none;display:block;width:100%}
+.btn:disabled{opacity:.35;cursor:default}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.nav{display:flex;gap:10px;margin-top:auto;padding-top:10px}.nav .btn.ghost{flex:0 0 34%}
+.card{background:var(--surface);border-left:5px solid var(--ink);padding:14px 16px}
+.inc{margin:8px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:8px;font-size:15px}
+.card b{display:block;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+.dk{background:var(--band);color:#fff;padding:18px}.dk p{color:#E6E3DD}
+.lst{display:flex;flex-direction:column;gap:8px;margin:4px 0}
+.lst div{background:var(--surface);padding:12px 14px;border-left:5px solid var(--ink);font-size:15px}
+.err{color:#B42318;font-size:14px}
+footer{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);max-width:520px;width:100%;margin:0 auto}
+.brand{display:flex;align-items:center;gap:8px;font:800 11px/1 Archivo;font-stretch:90%;letter-spacing:.22em;color:var(--ink)}
+.pul{width:26px;height:9px;border-radius:5px;background:var(--band)}
+</style>
+</head><body>
+<header><div class="k">Personal trainer · Cuiabá</div><div class="bar"><i id="barra"></i></div></header>
+<main id="app"></main>
+<footer><span class="brand"><span class="pul"></span>IGOR MERINO</span><span>Músculo é seguro de vida.</span></footer>
+<script>
+const WHATSAPP = '5565996856769';
+// cada pergunta: id, título, texto de apoio, opções (ou campos)
+const P = [
+  { id: 'objetivo', t: 'Qual é o seu objetivo principal?', o: ['Ganhar músculo e força', 'Emagrecer', 'Mais disposição e saúde', 'Voltar a treinar'] },
+  { id: 'treina', t: 'Hoje você treina?', o: ['Sim, treino', 'Parei há pouco tempo', 'Faz tempo que não treino'] },
+  { id: 'local', t: 'Onde você quer treinar?', o: ['Academia do meu condomínio', 'Em casa', 'Outro lugar'] },
+  { id: 'dias', t: 'Quais dias você prefere?', o: ['Terça e quinta', 'Terça e sexta', 'Quinta e sexta', 'Terça, quinta e sexta', 'Prefiro outros dias'] },
+  { id: 'horario', t: 'Qual horário fica melhor?', o: ['13h30 às 14h30', '15h45 às 16h45', 'Outro horário'], extra: 'Qual horário você queria?', extraSe: 'Outro horário' },
+  { id: 'valor', t: 'Quanto você pensa investir por mês?', o: ['Menos de R$ 550', 'R$ 550 a R$ 700', 'R$ 700 a R$ 900', 'R$ 900 a R$ 1.100', 'R$ 1.100 a R$ 1.300'] },
+  { id: 'inicio', t: 'Quando quer começar?', o: ['Essa semana', 'Ainda esse mês', 'Só estou pesquisando'] },
+  { id: 'contato', t: 'Para finalizar, seus dados', campos: [['nome', 'Nome', 'text', 'Seu nome'], ['lugar', 'Condomínio e bairro', 'text', 'Ex.: Condomínio Florais, Jardim Itália']] },
+];
+const R = {}; let i = -1;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const app = document.getElementById('app');
+
+function tela() {
+  document.getElementById('barra').style.width = i < 0 ? '0' : Math.min(100, ((i + 1) / P.length) * 100) + '%';
+  if (i < 0) return inicio();
+  if (i >= P.length) return fim();
+  const q = P[i];
+  let h = `<p class="muted">Pergunta ${i + 1} de ${P.length}</p><h2><span>${q.t}</span></h2>`;
+  if (q.o) h += `<div class="opts">${q.o.map((o, n) => `<button class="op" aria-pressed="${R[q.id] === o}" data-o="${n}">${o}</button>`).join('')}</div>`;
+  if (q.extra) h += `<label class="f" id="extraBox" ${R[q.id] === q.extraSe ? '' : 'hidden'}>${q.extra}<input id="extra" placeholder="Ex.: 7h, 18h" value="${esc(R[q.id + '_qual'] || '')}"></label>`;
+  if (q.campos) h += q.campos.map(c => `<label class="f">${c[1]}<input id="${c[0]}" type="${c[2]}" placeholder="${c[3]}" value="${esc(R[c[0]] || '')}" autocomplete="${c[0] === 'nome' ? 'name' : 'off'}"></label>`).join('') + `<p class="err" id="err" hidden>Preencha seu nome e o condomínio.</p>`;
+  h += `<div class="nav"><button class="btn ghost" id="voltar">Voltar</button><button class="btn" id="seguir" ${podeSeguir() ? '' : 'disabled'}>${i === P.length - 1 ? 'Ver resultado' : 'Continuar'}</button></div>`;
+  app.innerHTML = h; window.scrollTo(0, 0);
+}
+function podeSeguir() { const q = P[i]; return q.campos ? true : !!R[q.id]; }
+function inicio() {
+  app.innerHTML = `<p class="muted">Personal trainer em Cuiabá · Igor Merino</p>
+    <h1><span>Treino de verdade, no seu condomínio.</span></h1>
+    <p class="lead">Acompanhamento individual, do jeito que o seu corpo e a sua rotina pedem. Responda em 1 minuto e veja se tenho horário para você.</p>
+    <div class="chips"><span>Força</span><span>Músculo</span><span>Disposição</span><span>Segurança</span></div>
+    <div class="nav"><button class="btn" id="comecar">Ver horários</button></div>`;
+}
+// resultado: 'tenho' (horário livre e valor ok), 'ver' (outro dia/horário ou valor curto p/ 3x), 'baixo' (abaixo de R$ 550)
+function resultado() {
+  if (R.valor === 'Menos de R$ 550') return 'baixo';
+  if (R.dias === 'Prefiro outros dias' || R.horario === 'Outro horário') return 'ver';
+  if (R.dias === 'Terça, quinta e sexta' && R.valor === 'R$ 550 a R$ 700') return 'ver';
+  return 'tenho';
+}
+function mensagem() {
+  const r = resultado();
+  const L = [`Olá, Igor! Fiz o quiz do personal.`, '', `Nome: ${R.nome}`, `Condomínio/bairro: ${R.lugar}`, '',
+    `Objetivo: ${R.objetivo}`, `Treina hoje: ${R.treina}`, `Local: ${R.local}`, `Dias: ${R.dias}`,
+    `Horário: ${R.horario === 'Outro horário' ? 'Outro: ' + (R.horario_qual || 'não disse') : R.horario}`,
+    `Investimento por mês: ${R.valor}`, `Começar: ${R.inicio}`, '',
+    `Resultado: ${r === 'tenho' ? 'TEM HORÁRIO' : r === 'ver' ? 'VER DISPONIBILIDADE' : 'VALOR ABAIXO'}`];
+  return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(L.join('\n'))}`;
+}
+function fim() {
+  const r = resultado();
+  const nome = esc((R.nome || '').split(' ')[0]);
+  const enviar = `<a class="btn" href="${mensagem()}" target="_blank" rel="noopener">Enviar no WhatsApp</a><button class="btn ghost" id="refazer">Refazer o quiz</button>`;
+  if (r === 'tenho') app.innerHTML = `<h1><span>${nome}, tenho horário para você.</span></h1>
+      <p class="lead">${esc(R.dias)}, ${esc(R.horario)}. Esse horário está livre na minha agenda.</p>
+      <div class="dk"><p><b style="color:#fff">Último passo:</b> envie suas respostas pelo WhatsApp. A mensagem já vai pronta, é só tocar em enviar. Eu te chamo para confirmar e marcar o primeiro treino.</p></div>${enviar}`;
+  else if (r === 'ver') app.innerHTML = `<h1><span>${nome}, vou ver a disponibilidade.</span></h1>
+      <p class="lead">Envie suas respostas pelo WhatsApp. Eu confiro a agenda e te retorno com a melhor opção para você.</p>${enviar}`;
+  else app.innerHTML = `<h1><span>Obrigado, ${nome}.</span></h1>
+      <p class="lead">O acompanhamento presencial fica acima desse valor. Uma opção que cabe no seu momento é a <b>consultoria online</b>: treino montado para você, por R$ 150, para fazer onde e quando quiser.</p>
+      <a class="btn" href="../quiz/">Conhecer a consultoria online</a>
+      <a class="btn ghost" href="${mensagem()}" target="_blank" rel="noopener">Falar comigo no WhatsApp</a>`;
+}
+app.addEventListener('click', ev => {
+  const b = ev.target.closest('button'); if (!b) return;
+  if (b.id === 'comecar') { i = 0; tela(); }
+  else if (b.id === 'refazer') { for (const k in R) delete R[k]; i = -1; tela(); }
+  else if (b.dataset.o !== undefined) {
+    const q = P[i]; R[q.id] = q.o[+b.dataset.o];
+    app.querySelectorAll('.op').forEach(x => x.setAttribute('aria-pressed', x === b));
+    const eb = document.getElementById('extraBox'); if (eb) eb.hidden = R[q.id] !== q.extraSe;
+    document.getElementById('seguir').disabled = false;
+    if (!q.extra || R[q.id] !== q.extraSe) setTimeout(() => { if (P[i] === q) { i++; tela(); } }, 250);
+  }
+  else if (b.id === 'voltar') { i--; tela(); }
+  else if (b.id === 'seguir') {
+    const q = P[i];
+    if (q.extra) R[q.id + '_qual'] = (document.getElementById('extra') || {}).value || '';
+    if (q.campos) {
+      q.campos.forEach(c => R[c[0]] = document.getElementById(c[0]).value.trim());
+      if (!R.nome || !R.lugar) { document.getElementById('err').hidden = false; return; }
+    }
+    i++; tela();
+  }
+});
+tela();
+</script>
+</body></html>
